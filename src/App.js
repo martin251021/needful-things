@@ -1,8 +1,7 @@
-import logo from './logo.svg';
 import './App.css';
 import React from 'react';
 import axios from "axios";
-import { BrowserRouter, Routes, Route, Navigate, Switch } from 'react-router-dom';
+import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import Navbar from "./components/Navbar";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
