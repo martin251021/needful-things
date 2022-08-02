@@ -57,3 +57,11 @@ code {
 .footer {
   padding: 0 5rem 0 5rem;
 }
+
+.navbar-container > ul {
+  padding-left: 0;
+}
+
+.navbar-container > ul > li {
+  list-style: none;
+}

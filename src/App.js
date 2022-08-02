@@ -8,6 +8,7 @@ import Footer from "./components/Footer";
 import Main from './pages/Main';
 import CartPage from './pages/CartPage';
 import SingleProduct from './pages/SingleProduct';
+import Category from './pages/Category';
 
 
 function App() {
@@ -22,7 +23,6 @@ function App() {
       setLoading(true);
       try {
         const response = await axios("https://fakestoreapi.com/products")
-        // console.log([...new Set(response.data.map(e => e.category))])
         setData(response.data)
         setLoading(false)
       } catch(err) {
@@ -47,6 +47,7 @@ function App() {
               <Routes>
                 <Route index element={<Main />} />
                 <Route path=":productId" element={<SingleProduct />} />
+                <Route path="/categories/:category" element={<Category />} />
                 <Route path="/cart" element={<CartPage />} />
               </Routes>
             </div>
