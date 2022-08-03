@@ -1,7 +1,13 @@
-export default function Product() {
+import { Link } from "react-router-dom"
+
+export default function Product({title, price, description, category, image, rating, id}) {
     return(
-        <div>
-            <h1>Product Element</h1>
+        <Link to={`${id}`}>
+        <div className="product">
+            <p>{title}</p>
+            <img className="product-img" src={image}/>
         </div>
+        </Link>
+
     )
 }

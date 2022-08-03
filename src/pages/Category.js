@@ -2,6 +2,8 @@ import { useParams } from "react-router-dom";
 import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
+import Product from "../components/Product";
 
 export default function Category() {
 
@@ -28,13 +30,10 @@ export default function Category() {
     }, [category])
 
     return(
-        <div>
+        <div className="category-items-container">
             {loading ? <h1>Loading..</h1> :
-            data.map((e,i) => <div key={i}>
-                <h2>{e.title}</h2>
-                <p>{e.price}</p>
-                <p>{e.description}</p>
-            </div>)
+            // data.map((e,i) => <div key={i}><p>{e.title}</p></div>)           
+            data.map((e,i) => <Product key={i} {...e} />)
             }
         </div>
     )
