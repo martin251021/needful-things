@@ -24,7 +24,7 @@ export default function SingleProduct() {
             }
         }
         fetchData()
-    }, [])
+    }, [id])
 
     return(
         <div>
