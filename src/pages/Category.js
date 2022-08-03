@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import Product from "../components/Product";
+import LoadingSpinner from "../components/LoadingSpinner";
 
 export default function Category() {
 
@@ -31,7 +32,7 @@ export default function Category() {
 
     return(
         <div className="category-items-container">
-            {loading ? <h1>Loading..</h1> :
+            {loading ? <LoadingSpinner/> :
             // data.map((e,i) => <div key={i}><p>{e.title}</p></div>)           
             data.map((e,i) => <Product key={i} {...e} />)
             }

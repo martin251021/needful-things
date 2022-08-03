@@ -2,6 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import LoadingSpinner from "../components/LoadingSpinner";
 
 export default function SingleProduct() {
 
@@ -28,7 +29,7 @@ export default function SingleProduct() {
 
     return(
         <div>
-            {loading? <h1>Loading...</h1>:
+            {loading? <LoadingSpinner/>:
             <>
             <div>
                 <img src={data.image} />
