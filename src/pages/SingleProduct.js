@@ -18,6 +18,7 @@ export default function SingleProduct() {
             try {
                 const response = await axios(`https://fakestoreapi.com/products/${id}`)
                 setData(response.data)
+                console.log(response.data)
                 setLoading(false)
             } catch(err) {
                 setError(true);
@@ -28,16 +29,18 @@ export default function SingleProduct() {
     }, [id])
 
     return(
-        <div>
+        <div >
             {loading? <LoadingSpinner/>:
-            <>
-            <div>
-                <img src={data.image} />
+            <div className="singleproduct">
+            {/* <div className="singleproduct-image-container"> */}
+                <img className="singleproduct-image" src={data.image} />
+            {/* </div> */}
+            <div className="singleproduct-info">
+                <h4>{data.title}</h4>
+                <p>{`${data.price} €`}</p>
+                <p>{data.description}</p>
             </div>
-            <div>
-
             </div>
-            </>
         }
         </div>
     )
