@@ -32,14 +32,12 @@ export default function SingleProduct() {
         <div >
             {loading? <LoadingSpinner/>:
             <div className="singleproduct">
-            {/* <div className="singleproduct-image-container"> */}
                 <img className="singleproduct-image" src={data.image} />
-            {/* </div> */}
-            <div className="singleproduct-info">
-                <h4>{data.title}</h4>
-                <p>{`${data.price} €`}</p>
-                <p>{data.description}</p>
-            </div>
+                <div className="singleproduct-info">
+                    <h4>{data.title}</h4>
+                    <p>{`${data.price} €`}</p>
+                    <p>{data.description}</p>
+                </div>
             </div>
         }
         </div>

@@ -7,10 +7,10 @@ export default function Header() {
         textDecoration: "none"
     }
 
-    return(
+    return( 
             <div className="header-container">
-                <div >
-                    <Link style={styles} to={"/"} className="header-title">
+                <div className="header-title">
+                    <Link style={styles} to={"/"} >
                         <h1>Needful Things</h1>
                     </Link>
                 </div>
