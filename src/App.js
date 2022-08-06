@@ -9,6 +9,7 @@ import Main from './pages/Main';
 import CartPage from './pages/CartPage';
 import SingleProduct from './pages/SingleProduct';
 import Category from './pages/Category';
+import SearchResults from './pages/SearchResults';
 
 
 function App() {
@@ -43,14 +44,13 @@ function App() {
         </div>
         <div className='main-container'>
             <Navbar />
-            {/* <div className="main-content"> */}
               <Routes>
                 <Route index element={<Main />} />
                 <Route path="/categories/:category/:id" element={<SingleProduct />} />
                 <Route path="/categories/:category" element={<Category />} />
                 <Route path="/cart" element={<CartPage />} />
+                <Route path="/search" element={<SearchResults />} />
               </Routes>
-            {/* </div> */}
         </div>
         <div className='footer'>
           <Footer />

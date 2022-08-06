@@ -1,10 +1,15 @@
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import Cart from "../components/Cart"
 
 export default function Header() {
 
     const styles = {
         textDecoration: "none"
+    }
+
+    const navigate = useNavigate()
+    const searchHandler = function() {
+        navigate("/search")
     }
 
     return( 
@@ -14,8 +19,10 @@ export default function Header() {
                         <h1>Needful Things</h1>
                     </Link>
                 </div>
-                <input className="search-bar" placeholder="Search for a product"/>
-                <button className="search-button">Search</button>
+                <input 
+                    className="search-bar" 
+                    placeholder="Search for a product"/>
+                <button onClick={searchHandler} className="search-button">Search</button>
                 <div className="header-cart">
                         <Cart/>
                 </div>
