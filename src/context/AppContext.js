@@ -8,10 +8,13 @@ export function useApp() {
 export function AppProvider({children}) {
 
     const [searchQuery, setSearchQuery] = useState("")
+    const [itemsInCart, setItemsInCart] = useState([])
 
     return(
         <AppContext.Provider value={{
             searchQuery: searchQuery,
+            itemsInCart: itemsInCart,
+            setItemsInCart,
             setSearchQuery
         }}>
             {children}

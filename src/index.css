@@ -158,3 +158,45 @@ code {
   text-align: center;
   border-radius: 10px;
 }
+
+.cart-item-container {
+  display: flex;
+  background-color: white;
+  border-radius: 10px;
+  align-items:center;
+  padding: 1rem;
+}
+
+.cart-item-img-title {
+  display: flex;
+  align-items: center;
+}
+
+.cart-item-img {
+  width: 5rem;
+  object-fit: cover;
+}
+
+.cart-item-title {
+  padding: 1rem;
+}
+
+.cart-item-price {
+  margin:1rem;
+}
+
+.summary {
+  margin-top:1rem;
+  display: flex;
+  background-color: white;
+  border-radius: 10px;
+  align-items: center;
+}
+
+.summary > h2 {
+  padding: 0;
+}
+
+.total {
+  margin-left: auto;
+}

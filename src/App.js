@@ -52,7 +52,9 @@ function App() {
                   <Route path="/categories/:category/:id" element={<SingleProduct />} />
                   <Route path="/categories/:category" element={<Category />} />
                   <Route path="/cart" element={<CartPage />} />
+                  <Route path="/cart/:id" element={<SingleProduct />} />
                   <Route path="/search" element={<SearchResults />} />
+                  <Route path="/search/:id" element={<SingleProduct />} />
                 </Routes>
           </div>
           <div className='footer'>
