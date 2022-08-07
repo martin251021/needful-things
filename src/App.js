@@ -10,53 +10,57 @@ import CartPage from './pages/CartPage';
 import SingleProduct from './pages/SingleProduct';
 import Category from './pages/Category';
 import SearchResults from './pages/SearchResults';
+import { AppProvider } from "./context/AppContext"
 
+export const AppContext = React.createContext()
 
 function App() {
-  const [data, setData] = React.useState(null)
-  const [loading, setLoading] = React.useState(true)
-  const [error, setError] = React.useState(false)
+  // const [data, setData] = React.useState(null)
+  // const [loading, setLoading] = React.useState(true)
+  // const [error, setError] = React.useState(false)
   
 
-  React.useEffect(() => {
-    const fetchData = async function() {
-      setError(false);
-      setLoading(true);
-      try {
-        const response = await axios("https://fakestoreapi.com/products")
-        setData(response.data)
-        setLoading(false)
-      } catch(err) {
-        console.log(err)
-        setError(true)
-      }
-    }
-    fetchData()
+  // React.useEffect(() => {
+  //   const fetchData = async function() {
+  //     setError(false);
+  //     setLoading(true);
+  //     try {
+  //       const response = await axios("https://fakestoreapi.com/products")
+  //       setData(response.data)
+  //       setLoading(false)
+  //     } catch(err) {
+  //       console.log(err)
+  //       setError(true)
+  //     }
+  //   }
+  //   fetchData()
     
-  }, [])
+  // }, [])
 
 
   return (
-    <div className="main">
-      <BrowserRouter>
-        <div className='header'>
-          <Header />
-        </div>
-        <div className='main-container'>
-            <Navbar />
-              <Routes>
-                <Route index element={<Main />} />
-                <Route path="/categories/:category/:id" element={<SingleProduct />} />
-                <Route path="/categories/:category" element={<Category />} />
-                <Route path="/cart" element={<CartPage />} />
-                <Route path="/search" element={<SearchResults />} />
-              </Routes>
-        </div>
-        <div className='footer'>
-          <Footer />
-        </div>
-      </BrowserRouter>
-    </div>
+    <AppProvider>
+      <div className="main">
+        <BrowserRouter>
+          <div className='header'>
+            <Header />
+          </div>
+          <div className='main-container'>
+              <Navbar />
+                <Routes>
+                  <Route index element={<Main />} />
+                  <Route path="/categories/:category/:id" element={<SingleProduct />} />
+                  <Route path="/categories/:category" element={<Category />} />
+                  <Route path="/cart" element={<CartPage />} />
+                  <Route path="/search" element={<SearchResults />} />
+                </Routes>
+          </div>
+          <div className='footer'>
+            <Footer />
+          </div>
+        </BrowserRouter>
+      </div>
+    </AppProvider>
   );
 }
 
