@@ -8,7 +8,7 @@ import { useApp } from "../context/AppContext";
 export default function SingleProduct() {
 
     const {id} = useParams()
-    const [data, setData] = useState([])
+    const [data, setData] = useState()
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(false)
 
@@ -33,11 +33,11 @@ export default function SingleProduct() {
 
     const addToCartHandle = () => {
         if(itemsInCart.map(e => e.id).includes(data.id)) {
-            // setItemsInCart(prevState => prevState[prevState.indexOf(prevState.id === data.id)].counter = prevState.counter + 1)
-            // setItemsInCart(prevState => [...prevState, prevState.find(e => e.id === data.id).counter = prevState.counter + 1])
             setItemsInCart(prevState => prevState.map(e => {
                 if(e.id === data.id) {
                     return {...e, counter: e.counter + 1}
+                } else {
+                    return e
                 }
             }))
         } else {
@@ -46,9 +46,6 @@ export default function SingleProduct() {
                 counter: 1
             }])
         }
-
-        // setItemsInCart(prevState => [...prevState, data])
-        // console.log(itemsInCart.find(e => e.id === data.id).counter)
     }
 
     return(
