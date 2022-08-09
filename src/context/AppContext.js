@@ -8,7 +8,7 @@ export function useApp() {
 export function AppProvider({children}) {
 
     const [searchQuery, setSearchQuery] = useState("")
-    const [itemsInCart, setItemsInCart] = useState([])
+    const [itemsInCart, setItemsInCart] = useState(JSON.parse(localStorage.getItem("itemsInCart")))
 
     return(
         <AppContext.Provider value={{
