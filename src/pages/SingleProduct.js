@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import LoadingSpinner from "../components/LoadingSpinner";
 import { useApp } from "../context/AppContext";
+import BuyModal from "../components/BuyModal";
 
 export default function SingleProduct() {
 
@@ -13,7 +14,7 @@ export default function SingleProduct() {
     const [error, setError] = useState(false)
 
     const appContext = useApp()
-    const {itemsInCart, setItemsInCart} = appContext
+    const {itemsInCart, setItemsInCart,setBuyModalActive, setOverlayActive} = appContext
 
     useEffect(() => {
         const fetchData = async() => {
@@ -50,11 +51,10 @@ export default function SingleProduct() {
                 counter: 1
             }])
         }
-        // localStorage.setItem("itemsInCart", JSON.stringify(itemsInCart))
+        setBuyModalActive(true)
+        setOverlayActive(true)
     }
 
-    // console.log(JSON.parse(localStorage.getItem("itemsInCart")))
-    // console.log(itemsInCart)
 
     return(
         <div >
@@ -68,7 +68,10 @@ export default function SingleProduct() {
                     <button onClick={addToCartHandle}>Add to cart</button>
                 </div>
             </div>
-        }
+            }
+            <div>
+                <BuyModal />
+            </div>
         </div>
     )
 }
