@@ -170,8 +170,12 @@ code {
   justify-content: space-between;
   margin-bottom: 1rem;
   grid-auto-flow: column;
-  grid-template-areas: "imgtitle pricepc modify totalperitem";
+  grid-template-areas: " radioinput imgtitle pricepc modify totalperitem";
   grid-column-gap: 8rem;
+}
+
+.cart-item-radio-input {
+  grid-area: radioinput
 }
 
 .cart-item-img-title {
@@ -236,15 +240,23 @@ code {
 
 .cart-page-continue {
   display: flex;
-  background-color: white;
-  /* margin-top:1rem;
-  padding: 1rem; */
+  padding: 0 1rem 1rem 1rem;
 }
 
 .continue-btn {
   margin-left: auto;
-
 }
+
+.cart-page-footer, .cart-page-header {
+  background-color: white;
+  border-radius: 10px;
+}
+
+.cart-page-header {
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+}
+
 
 /* modal */
 .modal {
@@ -252,17 +264,21 @@ code {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 70%;
+  width: 30%;
 
   background-color: white;
-  padding: 2rem;
+  padding: 1rem;
   border-radius: 5px;
   box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
   z-index: 10;
 
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+  display: grid;
+  /* grid-auto-flow: column; */
+  grid-template-areas: 
+      "modal-p modal-p modal-p"
+      "modal-back . modal-continue";
+  justify-content: center;
+  
 }
 
 .overlay {
@@ -280,14 +296,18 @@ code {
   display: none;
 }
 
-.close-modal {
-  position: absolute;
-  top: 0.7rem;
-  right: 1rem;
-  font-size: 3rem;
-  color: #333;
-  cursor: pointer;
-  border: none;
-  background: none;
+.modal > p {
+  grid-area: modal-p;
+  margin:1rem;
+}
+
+.modal-back {
+  grid-area: modal-back;
+  margin:1rem;
+}
+
+.modal-continue {
+  grid-area: modal-continue;
+  margin:1rem;
 }
 

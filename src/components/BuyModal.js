@@ -1,4 +1,5 @@
-import { useApp } from "../context/AppContext"
+import { useApp } from "../context/AppContext";
+import { useNavigate } from "react-router-dom";
 
 export default function BuyModal() {
 
@@ -9,11 +10,18 @@ export default function BuyModal() {
         setOverlayActive(false)
     }
 
+    const navigate = useNavigate()
+    const handleContinue =() => {
+        setBuyModalActive(false)
+        setOverlayActive(false)
+        navigate("/cart")
+    }
+
     return(
         <div className={isBuyModalActive ? "modal" : "modal hidden"}>
             <p>Youve added item to your cart.</p>
-            <button onClick={hideModal}>Back</button>
-            <button>Continue to cart</button>
+            <button className="modal-back" onClick={hideModal}>Back</button>
+            <button className="modal-continue" onClick={handleContinue}>Continue to cart</button>
         </div>
     )
 }

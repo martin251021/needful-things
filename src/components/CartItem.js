@@ -38,6 +38,7 @@ export default function CartItem({title, price, description, category, image, ra
 
     return(
         <div id={id} className="cart-item-container">
+            <input className="cart-item-radio-input" type="radio" />
             <Link to={`${id}`}>
             <div className="cart-item-img-title">
                 <img className="cart-item-img" src={image} />

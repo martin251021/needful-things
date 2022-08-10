@@ -7,9 +7,9 @@ export default function Main() {
     return(
         <div>
             <h1>Main Page</h1>
-            <div className={isBuyModalActive? "overlay" : "overlay hidden"}>
+            {/* <div className={isBuyModalActive? "overlay" : "overlay hidden"}>
                 
-            </div>
+            </div> */}
         </div>
     )
 }

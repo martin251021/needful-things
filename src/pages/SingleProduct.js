@@ -14,7 +14,7 @@ export default function SingleProduct() {
     const [error, setError] = useState(false)
 
     const appContext = useApp()
-    const {itemsInCart, setItemsInCart,setBuyModalActive, setOverlayActive} = appContext
+    const {itemsInCart, isBuyModalActive, setItemsInCart,setBuyModalActive, setOverlayActive} = appContext
 
     useEffect(() => {
         const fetchData = async() => {
@@ -71,6 +71,11 @@ export default function SingleProduct() {
             }
             <div>
                 <BuyModal />
+            </div>
+            <div onClick={() => {
+                setBuyModalActive(false)
+                setOverlayActive(false)
+            }} className={isBuyModalActive? "overlay" : "overlay hidden"}>
             </div>
         </div>
     )
