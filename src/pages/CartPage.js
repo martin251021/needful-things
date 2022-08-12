@@ -2,6 +2,7 @@ import { useApp } from "../context/AppContext";
 import CartItem from "../components/CartItem";
 import React, {useEffect, useState} from "react";
 import { useNavigate } from "react-router-dom";
+import trash from "../images/164909-photos-trash-png-free-photo_32x32.ico"
 
 
 export default function CartPage() {
@@ -33,20 +34,27 @@ export default function CartPage() {
         }
     }
 
+    const deleteSelected = () => {
+        setItemsInCart(prevState => prevState.filter(e => e.cartSelected === false))
+    }
+
 
     return(
             <div className="cart-page-items-summary-container">
                 <div className="cart-page-header">
                     <h2>Shopping Cart</h2>
-                    <label>
-                    <input 
-                        type="checkbox" 
-                        value="allcartitems"
-                        onChange={selectAllHandle}
-                        checked={itemsInCart.map(e => e.cartSelected).every(e => e === true)}
-                        />
-                        Select All
-                    </label>
+                    <div className="cart-page-sel-del">
+                        <label>
+                        <input 
+                            type="checkbox" 
+                            value="allcartitems"
+                            onChange={selectAllHandle}
+                            checked={itemsInCart.map(e => e.cartSelected).every(e => e === true)}
+                            />
+                            Select All
+                        </label>
+                        <img className="cart-page-del" src={trash} onClick={deleteSelected}/>
+                    </div>
                 </div>
                 <div className="cart-page-items-container">
                     {itemsInCart.length > 0 ? itemsInCart.map((e,i) => 
