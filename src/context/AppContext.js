@@ -11,6 +11,7 @@ export function AppProvider({children}) {
     const [itemsInCart, setItemsInCart] = useState(JSON.parse(localStorage.getItem("itemsInCart")))
     const [isBuyModalActive, setBuyModalActive] = useState(false)
     const [isOverlayActive, setOverlayActive] = useState(false)
+    const [isDelModalActive, setDelModalActive] = useState(false)
 
     const useEscape = function(onEscape) {
         React.useEffect(() => {
@@ -37,10 +38,12 @@ export function AppProvider({children}) {
             itemsInCart: itemsInCart,
             isBuyModalActive: isBuyModalActive,
             isOverlayActive: isOverlayActive,
+            isDelModalActive: isDelModalActive,
             setItemsInCart,
             setSearchQuery,
             setBuyModalActive,
-            setOverlayActive
+            setOverlayActive,
+            setDelModalActive
         }}>
             {children}
         </AppContext.Provider>

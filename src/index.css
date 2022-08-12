@@ -323,3 +323,7 @@ code {
   cursor: pointer;
 }
 
+.checkbox-input {
+  border-radius: 50%;
+}
+

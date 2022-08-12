@@ -45,9 +45,9 @@ export default function CartItem({title, price, description, category, image, ra
     return(
         <div id={id} className="cart-item-container">
             <input 
-                className="cart-item-radio-input" 
+                className="checkbox-input" 
                 type="checkbox" 
-                value="cartitem" 
+                value="cartitem"
                 onChange={checkBoxHandle}
                 checked={cartSelected}
                 />
