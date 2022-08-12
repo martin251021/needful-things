@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useApp } from "../context/AppContext";
 import React, {useEffect} from "react";
 
-export default function CartItem({title, price, description, category, image, rating, id, counter}) {
+export default function CartItem({title, price, description, category, image, rating, id, counter, cartSelected}) {
 
     const appContext = useApp()
     const {itemsInCart, setItemsInCart} = appContext
@@ -35,10 +35,22 @@ export default function CartItem({title, price, description, category, image, ra
         localStorage.setItem("itemsInCart", JSON.stringify(itemsInCart))
     }, [itemsInCart])
 
+    const checkBoxHandle = (e) => {
+        const id = Number( e.target.parentNode.id)
+        console.log(id)
+        setItemsInCart(prevState => prevState.map(e => e.id === id? {...e, cartSelected: !e.cartSelected} : e))
+    }
+
 
     return(
         <div id={id} className="cart-item-container">
-            <input className="cart-item-radio-input" type="radio" />
+            <input 
+                className="cart-item-radio-input" 
+                type="checkbox" 
+                value="cartitem" 
+                onChange={checkBoxHandle}
+                checked={cartSelected}
+                />
             <Link to={`${id}`}>
             <div className="cart-item-img-title">
                 <img className="cart-item-img" src={image} />

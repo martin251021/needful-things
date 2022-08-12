@@ -48,6 +48,7 @@ export default function SingleProduct() {
         } else {
             setItemsInCart(prevState => [...prevState, {
                 ...data,
+                cartSelected: false,
                 counter: 1
             }])
         }

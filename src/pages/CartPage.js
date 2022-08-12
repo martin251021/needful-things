@@ -1,6 +1,6 @@
 import { useApp } from "../context/AppContext";
 import CartItem from "../components/CartItem";
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import { useNavigate } from "react-router-dom";
 
 
@@ -9,7 +9,7 @@ export default function CartPage() {
     const appContext = useApp()
     const navigate = useNavigate()
 
-    const {itemsInCart, setBuyModalActive, setOverlayActive} = appContext
+    const {itemsInCart, setItemsInCart, setBuyModalActive, setOverlayActive} = appContext
 
     const total = itemsInCart.length > 0 ? itemsInCart.map(e => e.price * e.counter).reduce((a,e) => a + e).toFixed(2) : 0
 
@@ -23,13 +23,29 @@ export default function CartPage() {
         setOverlayActive(false)
     }
 
+    const selectAllHandle = () => {
+        if(itemsInCart.map(e => e.cartSelected).every(e => e === true)) {
+            setItemsInCart(prevState => prevState.map(e => ({...e, cartSelected: false})))
+        } else if(itemsInCart.map(e => e.cartSelected).every(e => e === false)) {
+            setItemsInCart(prevState => prevState.map(e => ({...e, cartSelected: true})))
+        } else {
+            setItemsInCart(prevState => prevState.map(e => ({...e, cartSelected: true})))
+        }
+    }
+
+
     return(
             <div className="cart-page-items-summary-container">
                 <div className="cart-page-header">
                     <h2>Shopping Cart</h2>
                     <label>
-                        <input type="radio"/>
-                        Select all items
+                    <input 
+                        type="checkbox" 
+                        value="allcartitems"
+                        onChange={selectAllHandle}
+                        checked={itemsInCart.map(e => e.cartSelected).every(e => e === true)}
+                        />
+                        Select All
                     </label>
                 </div>
                 <div className="cart-page-items-container">
