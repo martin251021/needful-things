@@ -41,6 +41,10 @@ export default function CartPage() {
         setOverlayActive(true)
     }
 
+    const handleContinue = () => {
+        navigate("/order")
+    }
+
 
     return(
             <div className="cart-page-items-summary-container">
@@ -74,7 +78,7 @@ export default function CartPage() {
                     </div>
                     <div className="cart-page-continue">
                         <button onClick={handleBackButton}>Back</button>
-                        <button className="continue-btn">Continue</button>
+                        <button onClick={handleContinue} className="continue-btn">Continue</button>
                     </div>
                 </div>}
                 <div>

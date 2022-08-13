@@ -11,6 +11,7 @@ import SingleProduct from './pages/SingleProduct';
 import Category from './pages/Category';
 import SearchResults from './pages/SearchResults';
 import { AppProvider } from "./context/AppContext";
+import OrderFinish from './pages/OrderFinish';
 
 
 export const AppContext = React.createContext()
@@ -34,6 +35,7 @@ function App() {
                   <Route path="/cart/:id" element={<SingleProduct />} />
                   <Route path="/search" element={<SearchResults />} />
                   <Route path="/search/:id" element={<SingleProduct />} />
+                  <Route path="/order" element={<OrderFinish />} />
                 </Routes>
           </div>
           <div className='footer'>

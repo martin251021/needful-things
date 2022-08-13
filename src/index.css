@@ -327,3 +327,19 @@ code {
   border-radius: 50%;
 }
 
+.order-finish-container {
+  background-color: white;
+  margin-left: 1rem;
+  border-radius: 5px;
+}
+
+.order-finish-container > h3 { 
+  margin-left: 1rem;
+}
+
+.order-delivery > label {
+  display: flex;
+  flex-direction: column;
+  
+}
+
