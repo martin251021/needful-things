@@ -6,7 +6,7 @@ import OrderRecapItem from "../components/OrderRecapItem";
 export default function OrderFinish() {
 
     const appContext = useApp()
-    const {itemsInCart} = appContext
+    const {itemsInCart, setItemsInCart} = appContext
 
     const navigate = useNavigate()
 
@@ -36,6 +36,13 @@ export default function OrderFinish() {
 
     const handleBack = () => {
         navigate(-1)
+    }
+
+    const handleFinish = () => {
+        localStorage.clear()
+        setItemsInCart([])
+        setOrderDetails({})
+        navigate("/ordered")
     }
 
     return(
@@ -70,37 +77,37 @@ export default function OrderFinish() {
                         <input 
                             type="radio" 
                             name="payment" 
-                            id="credit-debit-card" 
-                            value="credit-debit-card" 
-                            checked={orderDetails.payment === "credit-debit-card"}
+                            id="Credit/debit card" 
+                            value="Credit/debit card" 
+                            checked={orderDetails.payment === "Credit/debit card"}
                             onChange={handleChanges}/> <label>Credit/debit card</label> <br />
                         <input 
                             type="radio" 
                             name="payment" 
-                            id="apple-pay" 
-                            value="apple-pay" 
-                            checked={orderDetails.payment === "apple-pay"}
+                            id="Apple pay" 
+                            value="Apple pay" 
+                            checked={orderDetails.payment === "Apple pay"}
                             onChange={handleChanges}/> <label>Apple pay</label> <br />
                         <input 
                             type="radio" 
                             name="payment" 
-                            id="google-pay" 
-                            value="google-pay" 
-                            checked={orderDetails.payment === "google-pay"}
+                            id="Google pay" 
+                            value="Google pay" 
+                            checked={orderDetails.payment === "Google pay"}
                             onChange={handleChanges}/> <label>Google pay</label> <br />
                         <input 
                             type="radio" 
                             name="payment" 
-                            id="paypal" 
-                            value="paypal" 
-                            checked={orderDetails.payment === "paypal"}
+                            id="Paypal" 
+                            value="Paypal" 
+                            checked={orderDetails.payment === "Paypal"}
                             onChange={handleChanges}/> <label>Paypal</label> <br />
                         <input 
                             type="radio" 
                             name="payment" 
-                            id="bank-transfer" 
-                            value="bank-transfer" 
-                            checked={orderDetails.payment === "bank-transfer"}
+                            id="Bank transfer" 
+                            value="Bank transfer" 
+                            checked={orderDetails.payment === "Bank transfer"}
                             onChange={handleChanges}/> <label>Bank transfer</label> <br />
                 </div>
                 <div className="order-billing-address">
@@ -114,7 +121,7 @@ export default function OrderFinish() {
                 </div>
                 <div className="order-footer">
                     <button onClick={handleBack}>Back</button>
-                    <button className="order-finish-btn">Finish order</button>
+                    <button onClick={handleFinish} className="order-finish-btn">Finish order</button>
                 </div>
             </div>
             <div className="order-recap-container">
