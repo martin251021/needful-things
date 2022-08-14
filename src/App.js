@@ -36,6 +36,7 @@ function App() {
                   <Route path="/search" element={<SearchResults />} />
                   <Route path="/search/:id" element={<SingleProduct />} />
                   <Route path="/order" element={<OrderFinish />} />
+                  <Route path="/order/:id" element={<SingleProduct />} />
                 </Routes>
           </div>
           <div className='footer'>

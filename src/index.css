@@ -328,18 +328,80 @@ code {
 }
 
 .order-finish-container {
-  background-color: white;
-  margin-left: 1rem;
-  border-radius: 5px;
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 3.2fr 1fr;
 }
 
 .order-finish-container > h3 { 
   margin-left: 1rem;
 }
 
-/* .order-delivery > label {
+.order-inputs {
+  background-color: white;
+  margin: 0 1rem 0 1rem;
+  padding: 0 1rem 1rem 1rem;
+  border-radius: 5px;
+}
+
+.order-recap {
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.order-footer {
   display: flex;
-  flex-direction: column;
-  
-} */
+  padding-top: 1rem;
+}
+
+.order-finish-btn {
+  margin-left: auto;
+}
+
+.order-recap-item-img {
+  height: 2rem;
+  object-fit: cover;
+  margin: 0 0.5rem 0 0;
+}
+
+.order-recap-item-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 80%;
+}
+
+.order-recap-img-title {
+  display: flex;
+  align-items: center;
+}
+
+.order-recap-container {
+  background-color: white;
+  border-radius: 5px;
+  padding: 0.5rem 0.5rem 0 0.5rem;
+  font-size: 10px;
+}
+
+.order-recap-container-item {
+  border-bottom: 1px solid #dddada;
+}
+
+.order-recap-shipping, .order-recap-payment, .order-recap-total {
+  display: flex;
+}
+
+.order-recap-shipping-child, .order-recap-payment-child, .order-recap-total-child {
+  margin-left: auto;
+}
+
+.order-recap-total {
+  font-size: 14px;
+  padding: 0 0.5rem 0 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #dddada;
+}
+
+
 
