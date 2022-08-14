@@ -21,8 +21,14 @@ export default function OrderFinish() {
         zipCode: ""
     })
 
+    const [inputAlert, setInputAlert] = useState(false)
+
     useEffect(() => {
         localStorage.setItem("orderDetails", JSON.stringify(orderDetails))
+    },[orderDetails])
+
+    useEffect(() => {
+        if(Object.values(orderDetails).every(e => e.length > 0)) setInputAlert(false)
     },[orderDetails])
 
     const handleChanges = (e) => {
@@ -39,11 +45,17 @@ export default function OrderFinish() {
     }
 
     const handleFinish = () => {
-        localStorage.clear()
-        setItemsInCart([])
-        setOrderDetails({})
-        navigate("/ordered")
+        if(Object.values(orderDetails).every(e => e.length > 0)) {
+            localStorage.clear()
+            setItemsInCart([])
+            setOrderDetails({})
+            navigate("/ordered")
+        } else {
+            setInputAlert(true)
+        }
     }
+
+    console.log(Object.values(orderDetails).every(e => e.length > 0))
 
     return(
         <div className="order-finish-container">
@@ -118,6 +130,9 @@ export default function OrderFinish() {
                     <input type="text" placeholder="Post code" name="zipCode" value={orderDetails.zipCode} onChange={handleChanges}/> <br />
                     <input type="text" placeholder="Telephone number" name="telNum" value={orderDetails.telNum} onChange={handleChanges}/> <br />
                     <input type="text" placeholder="E-mail" name="email" value={orderDetails.email} onChange={handleChanges}/> <br />
+                </div>
+                <div className="order-alert">
+                    {inputAlert && <h3>Please fill in all the information.</h3>}
                 </div>
                 <div className="order-footer">
                     <button onClick={handleBack}>Back</button>
