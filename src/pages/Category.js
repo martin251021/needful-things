@@ -20,6 +20,7 @@ export default function Category() {
             setLoading(true)
             try {
                 const response = await axios(`https://fakestoreapi.com/products/category/${category}`)
+                console.log(response.data)
                 setData(response.data)
                 setLoading(false)
             } catch(err) {
@@ -32,8 +33,7 @@ export default function Category() {
 
     return(
         <div className="category-items-container">
-            {loading ? <LoadingSpinner/> :
-            // data.map((e,i) => <div key={i}><p>{e.title}</p></div>)           
+            {loading ? <LoadingSpinner/> :          
             data.map((e,i) => <Product key={i} {...e} />)
             }
         </div>

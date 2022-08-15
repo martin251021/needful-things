@@ -408,4 +408,7 @@ code {
   font-style: bold;
 }
 
+.star-rating-input {
+  display:none;
+}
 

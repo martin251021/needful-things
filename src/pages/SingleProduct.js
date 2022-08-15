@@ -5,6 +5,7 @@ import axios from "axios";
 import LoadingSpinner from "../components/LoadingSpinner";
 import { useApp } from "../context/AppContext";
 import BuyModal from "../components/BuyModal";
+import StarRating from "../components/StarRating";
 
 export default function SingleProduct() {
 
@@ -22,6 +23,7 @@ export default function SingleProduct() {
             setError(false)
             try {
                 const response = await axios(`https://fakestoreapi.com/products/${id}`)
+                console.log(response.data)
                 setData(response.data)
                 setLoading(false)
             } catch(err) {
@@ -66,6 +68,7 @@ export default function SingleProduct() {
                     <h4>{data.title}</h4>
                     <p>{`${data.price} €`}</p>
                     <p>{data.description}</p>
+                    <StarRating rating={data.rating}/>
                     <button onClick={addToCartHandle}>Add to cart</button>
                 </div>
             </div>
