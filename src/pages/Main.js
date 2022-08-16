@@ -1,12 +1,12 @@
 import { useApp } from "../context/AppContext";
-import SimpleImageSlider from "react-simple-image-slider";
+import ImageSlider from "../components/ImageSlider";
 
 export default function Main() {
 
 
     return(
         <div>
-            <h1>Main Page</h1>
+            <ImageSlider />
         </div>
     )
 }

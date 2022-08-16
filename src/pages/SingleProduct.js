@@ -7,6 +7,7 @@ import { useApp } from "../context/AppContext";
 import BuyModal from "../components/BuyModal";
 import StarRating from "../components/StarRating";
 
+
 export default function SingleProduct() {
 
     const {id} = useParams()
