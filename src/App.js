@@ -39,6 +39,7 @@ function App() {
                   <Route path="/order" element={<OrderFinish />} />
                   <Route path="/order/:id" element={<SingleProduct />} />
                   <Route path="/ordered" element={<OrderSent />} />
+                  {/* <Route path="/products/:id" element={<SingleProduct />} /> */}
                 </Routes>
           </div>
           <div className='footer'>

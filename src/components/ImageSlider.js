@@ -5,6 +5,7 @@ import "./style.css";
 import React,{useEffect, useState} from "react";
 import axios from "axios";
 import LoadingSpinner from "./LoadingSpinner";
+import { Link } from "react-router-dom";
 
 
 export default function ImageSlider() {
@@ -19,7 +20,7 @@ export default function ImageSlider() {
             setError(false)
             try {
                 const response = await axios("https://fakestoreapi.com/products");
-                setData(response.data)
+                setData(response.data.filter(e => e.rating.rate > 4))
                 setLoading(false)
                 
             } catch(err) {
@@ -37,7 +38,7 @@ export default function ImageSlider() {
         slidesToScroll: 1,
         lazyLoad: true,
         autoplay: true,
-      autoplaySpeed: 2000,
+      autoplaySpeed: 3500,
        
       };
 
@@ -48,12 +49,15 @@ export default function ImageSlider() {
             <div className="imgslider">
                 {loading? <LoadingSpinner /> :
                     <Slider {...settings}>
-                        {data.filter(e => e.rating.rate > 4).map(e => {
+                        {data.map(e => {
                             return(
-                                <div key={e}><img className="slider-img" src={e.image} /></div> // problem je v gride
-                            )
-                        })}
-                    </Slider>} 
+                                <Link to={`/search/${e.id}`}>
+                                    <div key={e}><img className="slider-img" src={e.image} /></div> 
+                                </Link>
+                                )
+                            })}
+                    </Slider>
+                    } 
 
                 
             </div>

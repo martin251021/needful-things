@@ -54,7 +54,8 @@ code {
   background-color: #efefef;
   grid-template-rows: min-content;
   grid-template-columns: 1fr 5fr;
-  grid-template-areas: "navbar cart-items cart-items cart-items"
+  grid-template-areas: "navbar cart-items cart-items cart-items";
+  grid-template-areas: "navbar mainpage mainpage mainpage"
 }
 
 
@@ -414,11 +415,15 @@ code {
 
 .slick-slide img {
   margin: auto;
-  width: 50%;
-  height: 50%;
+  width: auto;
+  height: 25rem;
 }
 
 .slider-img {
   width:5rem;
+}
+
+.main-page {
+  grid-area: mainpage;
 }
 

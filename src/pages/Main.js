@@ -5,7 +5,7 @@ export default function Main() {
 
 
     return(
-        <div>
+        <div className="main-page">
             <ImageSlider />
         </div>
     )
