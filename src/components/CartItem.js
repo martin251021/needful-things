@@ -51,7 +51,7 @@ export default function CartItem({title, price, description, category, image, ra
                 onChange={checkBoxHandle}
                 checked={cartSelected}
                 />
-            <Link to={`${id}`}>
+            <Link to={`${id}`} target="_blank">
             <div className="cart-item-img-title">
                 <img className="cart-item-img" src={image} />
                 <p className="cart-item-title">{title}</p>

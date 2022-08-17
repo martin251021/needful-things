@@ -55,7 +55,6 @@ code {
   grid-template-rows: min-content;
   grid-template-columns: 1fr 5fr;
   grid-template-areas: "navbar cart-items cart-items cart-items";
-  grid-template-areas: "navbar mainpage mainpage mainpage"
 }
 
 
@@ -83,7 +82,7 @@ code {
   list-style: none;
 }
 
-.category-items-container {
+.category-items-container, .main-best-items-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-column-gap: 1rem;
@@ -417,13 +416,25 @@ code {
   margin: auto;
   width: auto;
   height: 25rem;
-}
-
-.slider-img {
-  width:5rem;
+  padding: 0.5rem 0 0.5rem 0;
 }
 
 .main-page {
-  grid-area: mainpage;
+  grid-area: cart-items;
+  /* background-color: white; */
+  margin-left: 2rem;
 }
 
+.imgslider-item {
+  background-color: white;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+.main-best-container {
+  margin-left: -2rem;
+}
+
+.main-best-title {
+  margin-left: 2rem;
+}

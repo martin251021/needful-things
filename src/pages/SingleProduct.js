@@ -24,7 +24,6 @@ export default function SingleProduct() {
             setError(false)
             try {
                 const response = await axios(`https://fakestoreapi.com/products/${id}`)
-                console.log(response.data)
                 setData(response.data)
                 setLoading(false)
             } catch(err) {
@@ -69,7 +68,7 @@ export default function SingleProduct() {
                     <h4>{data.title}</h4>
                     <p>{`${data.price} €`}</p>
                     <p>{data.description}</p>
-                    <StarRating rating={data.rating}/>
+                    <StarRating key={data.id} rating={data.rating}/>
                     <button onClick={addToCartHandle}>Add to cart</button>
                 </div>
             </div>

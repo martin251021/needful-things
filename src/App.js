@@ -30,7 +30,7 @@ function App() {
               <Navbar />
                 <Routes>
                   <Route index element={<Main />} />
-                  <Route path="/categories/:category/:id" element={<SingleProduct />} />
+                  {/* <Route path="/categories/:category/:id" element={<SingleProduct />} /> */}
                   <Route path="/categories/:category" element={<Category />} />
                   <Route path="/cart" element={<CartPage />} />
                   <Route path="/cart/:id" element={<SingleProduct />} />
@@ -39,7 +39,6 @@ function App() {
                   <Route path="/order" element={<OrderFinish />} />
                   <Route path="/order/:id" element={<SingleProduct />} />
                   <Route path="/ordered" element={<OrderSent />} />
-                  {/* <Route path="/products/:id" element={<SingleProduct />} /> */}
                 </Routes>
           </div>
           <div className='footer'>
