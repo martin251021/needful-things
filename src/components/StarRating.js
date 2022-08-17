@@ -15,9 +15,11 @@ export default function StarRating({rating}) {
                     <label key={i}>
                         <input className="star-rating-input" type="radio" name="rating" value={Math.round(rate)}/>
                         <FaStar className="star" color={ratingValue <= Math.round(rate) ? "#ffc107" : "e4e5e9"}/>
+                        
                     </label>
                     )
             })}
+            <p className="star-rating-count">{`(${count})`}</p>
         </div>
     )
 }

@@ -65,10 +65,10 @@ export default function SingleProduct() {
             <div className="singleproduct">
                 <img className="singleproduct-image" src={data.image} />
                 <div className="singleproduct-info">
-                    <h4>{data.title}</h4>
-                    <p>{`${data.price} €`}</p>
-                    <p>{data.description}</p>
+                    <h3>{data.title}</h3>
                     <StarRating key={data.id} rating={data.rating}/>
+                    <p>{data.description}</p>
+                    <p>{`${data.price.toLocaleString("cz-CZ")} €`}</p>
                     <button onClick={addToCartHandle}>Add to cart</button>
                 </div>
             </div>

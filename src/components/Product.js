@@ -1,8 +1,14 @@
 import { Link } from "react-router-dom"
 
 export default function Product({title, price, description, category, image, rating, id}) {
+
+    const styles = {
+        textDecoration: "none",
+        color: "black"
+    }
+
     return(
-        <Link to={`/search/${id}`}>
+        <Link style={styles} to={`/search/${id}`} target="_blank">
         <div className="product">
             <p>{title}</p>
             <img className="product-img" src={image}/>
