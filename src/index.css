@@ -91,6 +91,14 @@ code {
   grid-row-gap: 1rem;
 }
 
+.navcategory-listitem:hover {
+  text-decoration: underline;
+}
+
+.navcategory-listitem, .header-title {
+  color: black;
+}
+
 .product {
   display: grid;
   justify-items: center;
@@ -105,6 +113,7 @@ code {
 .product:hover {
   /* border:1px solid rgb(155, 152, 152); */
   box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  text-decoration: underline;
 }
 
 .product-img {
@@ -460,5 +469,5 @@ code {
 }
 
 .main-best-title {
-  margin-left: 2rem;
+  margin-left: 2.1rem;
 }

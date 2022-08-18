@@ -14,9 +14,11 @@ export default function NavCategory({e}) {
     return(
 
         <Link to={`/categories/${e}`} style={styleLink}>
+            <div className="navcategory-listitem">
             <li style={styleListItem}>
                 {e}
             </li>
+            </div>
         </Link>
 )
 }

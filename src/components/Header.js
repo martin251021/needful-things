@@ -29,11 +29,11 @@ export default function Header() {
 
     return( 
             <div className="header-container">
-                <div className="header-title">
                     <Link style={styles} to={"/"} >
+                <div className="header-title">
                         <h1>Needful Things</h1>
-                    </Link>
                 </div>
+                    </Link>
                 <input 
                     className="search-bar" 
                     placeholder="Search for a product"
