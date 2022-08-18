@@ -16,7 +16,7 @@ export default function NavCategory({e}) {
         <Link to={`/categories/${e}`} style={styleLink}>
             <div className="navcategory-listitem">
             <li style={styleListItem}>
-                {e}
+                {e[0].toUpperCase().concat("", e.slice(1))}
             </li>
             </div>
         </Link>

@@ -13,10 +13,23 @@ code {
     monospace;
 }
 
+@font-face {
+  font-family: "Lobster-Regular";
+  src: local("Lobster-Regular"),
+   url("./fonts/Lobster-Regular.ttf") format("truetype");
+  font-weight: bold;
+  }
+
 /* .main {
   margin: 0 5rem 0 5rem;
   background-color: #efefef;
 } */
+
+p, h1, h2, h3, h4 {
+  font-family: "Lobster-Regular";
+  font-weight: 100;
+  letter-spacing: 1px;
+}
 
 .header-container {
   background-color: white;
@@ -29,6 +42,9 @@ code {
 .header-title {
   flex-basis: 16.2rem;
   flex-shrink: 0;
+  font-family: "Lobster-Regular";
+  font-size: 1.2rem;
+  letter-spacing: 2px;
 }
 
 .header-title > h1{
@@ -97,6 +113,7 @@ code {
 
 .navcategory-listitem, .header-title {
   color: black;
+  font-family: "Lobster-Regular";
 }
 
 .product {
