@@ -14,6 +14,7 @@ export default function SingleProduct() {
     const [data, setData] = useState()
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(false)
+    const [inputQty, setInputQty] = useState(1)
 
     const appContext = useApp()
     const {itemsInCart, isBuyModalActive, setItemsInCart,setBuyModalActive, setOverlayActive} = appContext
@@ -42,7 +43,7 @@ export default function SingleProduct() {
         if(itemsInCart.map(e => e.id).includes(data.id)) {
             setItemsInCart(prevState => prevState.map(e => {
                 if(e.id === data.id) {
-                    return {...e, counter: e.counter + 1}
+                    return {...e, counter: e.counter + inputQty}
                 } else {
                     return e
                 }
@@ -51,13 +52,37 @@ export default function SingleProduct() {
             setItemsInCart(prevState => [...prevState, {
                 ...data,
                 cartSelected: false,
-                counter: 1
+                counter: inputQty
             }])
         }
         setBuyModalActive(true)
         setOverlayActive(true)
     }
 
+    const inputHandle = (e) => {
+        if(e.target.value <= 0) {
+           setInputQty(1) 
+        } 
+        else {   
+            setInputQty(Number(e.target.value.replace(/\D/g, "")))
+        }
+    }
+
+    const decreaseHandle = () => {
+        if(inputQty === 1) {
+            setInputQty(prevState => prevState)
+        } else {
+            setInputQty(prevState => prevState - 1)
+        }
+    }
+
+    const increaseHandle = () => {
+        setInputQty(prevState => prevState + 1)
+    }
+
+    const styles = {
+        color: inputQty === 1 ? "rgb(202, 191, 191)" : "black"
+    }
 
     return(
         <div >
@@ -70,6 +95,11 @@ export default function SingleProduct() {
                     <p>{data.description}</p>
                     <p>{`${data.price.toLocaleString("cz-CZ")} €`}</p>
                     <button onClick={addToCartHandle}>Add to cart</button>
+                    <div className="singleproduct-qty">
+                        <button style={styles} onClick={decreaseHandle} className="singleproduct-qty-decrease">-</button>
+                        <input value={inputQty} className="singleproduct-qty-input" onChange={inputHandle}/>
+                        <button onClick={increaseHandle} className="singleproduct-qty-increase">+</button>
+                    </div>
                 </div>
             </div>
             }

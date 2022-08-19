@@ -3,7 +3,11 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import "./fonts/Lobster-Regular.ttf"
+import "./fonts/Lobster-Regular/Lobster-Regular.ttf";
+import "./fonts/Dancing-Script/DancingScript-VariableFont_wght.ttf";
+import "./fonts/Handlee/Handlee-Regular.ttf";
+import "./fonts/Raleway/Raleway-VariableFont_wght.ttf";
+import "./fonts/Great-Vibes/GreatVibes-Regular.ttf";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

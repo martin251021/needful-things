@@ -16,19 +16,39 @@ code {
 @font-face {
   font-family: "Lobster-Regular";
   src: local("Lobster-Regular"),
-   url("./fonts/Lobster-Regular.ttf") format("truetype");
+   url("./fonts/Lobster-Regular/Lobster-Regular.ttf") format("truetype");
   font-weight: bold;
   }
 
-/* .main {
-  margin: 0 5rem 0 5rem;
-  background-color: #efefef;
-} */
+@font-face {
+  font-family: "Handlee-Regular";
+  src: local("Handlee-Regular"),
+    url("./fonts/Handlee/Handlee-Regular.ttf") format("truetype");
+}
 
-p, h1, h2, h3, h4 {
-  font-family: "Lobster-Regular";
-  font-weight: 100;
+@font-face {
+  font-family: "Raleway-VariableFont_wght";
+  src:local("Raleway-VariableFont_wght"),
+    url("./fonts/Raleway/Raleway-VariableFont_wght.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "GreatVibes-Regular";
+  src: local("GreatVibes-Regular"),
+    url("./fonts/Great-Vibes/GreatVibes-Regular.ttf") format("truetype");
+}
+
+
+h1, h2, h3, h4 {
+  font-family: "GreatVibes-Regular";
+  font-weight: 600;
   letter-spacing: 1px;
+  
+}
+
+p {
+  font-family: "Raleway-VariableFont_wght";
+
 }
 
 .header-container {
@@ -37,12 +57,13 @@ p, h1, h2, h3, h4 {
   display:flex;
   align-items: center;
   /* justify-content: space-between; */
+
 }
 
 .header-title {
   flex-basis: 16.2rem;
   flex-shrink: 0;
-  font-family: "Lobster-Regular";
+  font-family: "GreatVibes-Regular";
   font-size: 1.2rem;
   letter-spacing: 2px;
 }
@@ -113,7 +134,7 @@ p, h1, h2, h3, h4 {
 
 .navcategory-listitem, .header-title {
   color: black;
-  font-family: "Lobster-Regular";
+  font-family: "GreatVibes-Regular";
 }
 
 .product {
@@ -183,6 +204,29 @@ p, h1, h2, h3, h4 {
 
 .singleproduct-info >h3 {
   margin-bottom: 0;
+}
+
+.singleproduct-qty {
+  margin-top: 1rem;
+}
+
+.singleproduct-qty-input {
+  width: 2rem;
+  height: 2rem;
+  margin: 0 8px 0 8px;
+  text-align: center;
+}
+
+.singleproduct-qty-decrease, .singleproduct-qty-increase {
+  border-radius: 50%;
+  border: 1px solid rgba(104, 100, 100, 0.219);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 4px 8px 4px 8px;
+  height:2rem;
+  width:2rem;
+  background-color: white;
+  font-size: 16px;
+  cursor: pointer;
 }
 
 .cart-icon {
@@ -487,4 +531,9 @@ p, h1, h2, h3, h4 {
 
 .main-best-title {
   margin-left: 2.1rem;
+}
+
+.order-sent {
+  margin: 2rem;
+  min-height: 27rem;
 }
