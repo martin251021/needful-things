@@ -34,17 +34,20 @@ export default function Header() {
                         <h1>Needful Things</h1>
                 </div>
                     </Link>
-                <input 
-                    className="search-bar" 
-                    placeholder="Search for a product"
-                    onChange={searchQueryHandler}
-                    value={searchQuery}
-                    onKeyDown={handleEnter}
-                    />
-                <button 
-                    onClick={searchButtonHandler} 
-                    className="search-button"
-                    >Search</button>
+                <div className="header-search">
+                    <input 
+                        className="search-bar" 
+                        placeholder="Search for a product"
+                        onChange={searchQueryHandler}
+                        value={searchQuery}
+                        onKeyDown={handleEnter}
+                        />
+                    <button 
+                        onClick={searchButtonHandler} 
+                        className="search-button"
+                        >Search
+                    </button>
+                </div>
                 <div className="header-cart">
                         <Cart/>
                 </div>

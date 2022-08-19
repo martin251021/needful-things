@@ -41,6 +41,11 @@ export default function CartItem({title, price, description, category, image, ra
         setItemsInCart(prevState => prevState.map(e => e.id === id? {...e, cartSelected: !e.cartSelected} : e))
     }
 
+    const styles = {
+        textDecoration: "none",
+        color: "black"
+    }
+
 
     return(
         <div id={id} className="cart-item-container">
@@ -51,10 +56,10 @@ export default function CartItem({title, price, description, category, image, ra
                 onChange={checkBoxHandle}
                 checked={cartSelected}
                 />
-            <Link to={`${id}`} target="_blank">
+            <Link style={styles} to={`${id}`} target="_blank">
             <div className="cart-item-img-title">
                 <img className="cart-item-img" src={image} />
-                <p className="cart-item-title">{title}</p>
+                <p  className="cart-item-title">{`${title.slice(0,20)}...`}</p>
             </div>
             </Link>
             <p className="cart-item-price">{price}€/pc</p>

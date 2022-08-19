@@ -56,7 +56,7 @@ export default function CartPage() {
                         <input 
                             type="checkbox" 
                             value="allcartitems"
-                            className="checkbox-input"
+                            className="cart-page-sel-del-checkbox-input"
                             onChange={selectAllHandle}
                             checked={itemsInCart.map(e => e.cartSelected).every(e => e === true)}
                             />
