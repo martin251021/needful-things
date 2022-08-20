@@ -35,9 +35,11 @@ export default function SingleProduct() {
         fetchData()
     }, [id])
 
-    useEffect(() => {
-        localStorage.setItem("itemsInCart", JSON.stringify(itemsInCart))
-    }, [itemsInCart])
+    // useEffect(() => {
+    //     localStorage.setItem("itemsInCart", JSON.stringify(itemsInCart))
+    // }, [itemsInCart])
+
+    console.log(itemsInCart)
 
     const addToCartHandle = () => {
         if(itemsInCart.map(e => e.id).includes(data.id)) {

@@ -1,4 +1,5 @@
 import React, { useContext, useState, useEffect } from "react";
+import { useCrossTabState } from "../hooks/useCrossTabState";
 
 const AppContext = React.createContext()
 export function useApp() {
@@ -8,7 +9,8 @@ export function useApp() {
 export function AppProvider({children}) {
 
     const [searchQuery, setSearchQuery] = useState("")
-    const [itemsInCart, setItemsInCart] = useState(JSON.parse(localStorage.getItem("itemsInCart")) || [])
+    // const [itemsInCart, setItemsInCart] = useState(JSON.parse(localStorage.getItem("itemsInCart")) || [])
+    const [itemsInCart, setItemsInCart] = useCrossTabState("itemsInCart", []);
     const [isBuyModalActive, setBuyModalActive] = useState(false)
     const [isOverlayActive, setOverlayActive] = useState(false)
     const [isDelModalActive, setDelModalActive] = useState(false)

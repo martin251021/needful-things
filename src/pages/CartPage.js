@@ -15,9 +15,9 @@ export default function CartPage() {
 
     const total = itemsInCart.length > 0 ? itemsInCart.map(e => e.price * e.counter).reduce((a,e) => a + e).toFixed(2) : 0
 
-    useEffect(() => {
-        localStorage.setItem("itemsInCart", JSON.stringify(itemsInCart))
-    }, [itemsInCart])
+    // useEffect(() => {
+    //     localStorage.setItem("itemsInCart", JSON.stringify(itemsInCart))
+    // }, [itemsInCart])
 
     const handleBackButton = () => {
         navigate(-1)
