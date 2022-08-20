@@ -39,8 +39,6 @@ export default function SingleProduct() {
     //     localStorage.setItem("itemsInCart", JSON.stringify(itemsInCart))
     // }, [itemsInCart])
 
-    console.log(itemsInCart)
-
     const addToCartHandle = () => {
         if(itemsInCart.map(e => e.id).includes(data.id)) {
             setItemsInCart(prevState => prevState.map(e => {
