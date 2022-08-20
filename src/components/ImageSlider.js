@@ -26,7 +26,7 @@ export default function ImageSlider({data}) {
                         {data.map(e => {
                             return(
                                 <div className="imgslider-item" key={e}>
-                                    <Link to={`/search/${e.id}`}>
+                                    <Link to={`/search/${e.id}`} target="_blank">
                                         <img className="slider-img" src={e.image} />
                                     </Link>
                                 </div> 
