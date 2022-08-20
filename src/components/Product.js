@@ -8,7 +8,7 @@ export default function Product({title, price, description, category, image, rat
     }
 
     return(
-        <Link style={styles} to={`/search/${id}`} target="_blank">
+        <Link style={styles} to={`/search/${id}`}>
         <div className="product">
             <p>{title}</p>
             <img className="product-img" src={image}/>

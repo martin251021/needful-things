@@ -14,7 +14,6 @@ import { AppProvider } from "./context/AppContext";
 import OrderFinish from './pages/OrderFinish';
 import OrderSent from './pages/OrderSent';
 
-
 export const AppContext = React.createContext()
 
 function App() {

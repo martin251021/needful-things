@@ -5,14 +5,18 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import Product from "../components/Product";
 import LoadingSpinner from "../components/LoadingSpinner";
+import { useApp } from "../context/AppContext";
 
 export default function Category() {
 
     const {category} = useParams()
+    const appContext = useApp()
 
     const [data, setData] = useState([])
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(false)
+
+    const {itemsInCart} = appContext
 
     useEffect(() => {
         const fetchData = async() => {
@@ -20,7 +24,6 @@ export default function Category() {
             setLoading(true)
             try {
                 const response = await axios(`https://fakestoreapi.com/products/category/${category}`)
-                console.log(response.data)
                 setData(response.data)
                 setLoading(false)
             } catch(err) {
@@ -30,6 +33,10 @@ export default function Category() {
         }
         fetchData()
     }, [category])
+
+    useEffect(() => {
+        console.log(itemsInCart)
+    },[itemsInCart])
 
     return(
         <div className="category-items-container">

@@ -335,6 +335,7 @@ p {
 .cart-page-items-summary-container {
   grid-area: cart-items;
   margin-left: 2rem;
+  min-height: 75vh;
 }
 
 .cart-total-per-item {
