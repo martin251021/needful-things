@@ -74,7 +74,7 @@ export default function CartPage() {
                 <div className="cart-page-footer">
                     <div className="summary">
                         <h2>Total</h2>
-                        <p className="total">{total} €</p>
+                        <p className="total">{Number(total).toLocaleString("cz-CZ")} €</p>
                     </div>
                     <div className="cart-page-continue">
                         <button onClick={handleBackButton}>Back</button>

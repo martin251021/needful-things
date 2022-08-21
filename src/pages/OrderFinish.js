@@ -33,7 +33,6 @@ export default function OrderFinish() {
 
     const handleChanges = (e) => {
         const {name, value} = e.target
-        console.log(e.target)
         setOrderDetails(prevState => ({
             ...prevState,
             [name]: value
@@ -55,7 +54,7 @@ export default function OrderFinish() {
         }
     }
 
-    console.log(Object.values(orderDetails).every(e => e.length > 0))
+    console.log(itemsInCart)
 
     return(
         <div className="order-finish-container">
@@ -155,7 +154,7 @@ export default function OrderFinish() {
                 </div>}
                 <div className="order-recap-total">
                     <p>Total:</p>
-                    <p className="order-recap-total-child">{itemsInCart.map(e => e.price).reduce((e,i) => e+i)} €</p>
+                    <p className="order-recap-total-child">{(itemsInCart.map(e => e.price * e.counter).reduce((e,i) => e+i,0)).toLocaleString("cz-CZ")} €</p>
                 </div>
             </div>
         </div>

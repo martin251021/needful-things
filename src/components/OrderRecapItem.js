@@ -15,7 +15,7 @@ export default function OrderRecapItem({id, title, image, price}) {
                     <p className="order-recap-item-title">{`${title.slice(0,20)}...`}</p>
                 </div>
             </Link>
-            <p className="order-recap-item-price">{price} €</p>
+            <p className="order-recap-item-price">{price.toLocaleString("cz-CZ")} €</p>
         </div>
     )
 }

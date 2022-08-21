@@ -62,13 +62,13 @@ export default function CartItem({title, price, description, category, image, ra
                 <p  className="cart-item-title">{`${title.slice(0,20)}...`}</p>
             </div>
             </Link>
-            <p className="cart-item-price">{price}€/pc</p>
+            <p className="cart-item-price">{price.toLocaleString("cz-CZ")}€/pc</p>
             <div className="cart-item-modify">
                 <input onChange={inputHandleOnChange} className="cart-item-input" value={counter}/>
                 <button className="cart-item-increase" onClick={increaseQty}>+</button>
                 <button className="cart-item-decrease" onClick={decreaseQty}>-</button>
             </div>
-            <p className="cart-total-per-item">{counter * price}€</p>
+            <p className="cart-total-per-item">{Number(counter * price).toLocaleString("cz-CZ")}€</p>
         </div>
     )
 }

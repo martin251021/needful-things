@@ -9,7 +9,6 @@ export function useApp() {
 export function AppProvider({children}) {
 
     const [searchQuery, setSearchQuery] = useState("")
-    // const [itemsInCart, setItemsInCart] = useState(JSON.parse(localStorage.getItem("itemsInCart")) || [])
     const [itemsInCart, setItemsInCart] = useCrossTabState("itemsInCart", []);
     const [isBuyModalActive, setBuyModalActive] = useState(false)
     const [isOverlayActive, setOverlayActive] = useState(false)

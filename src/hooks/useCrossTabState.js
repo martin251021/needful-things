@@ -31,7 +31,7 @@ export function useCrossTabState(stateKey,defaultValue){
       window.addEventListener('storage',onReceiveMessage)
       return () => window.removeEventListener('storage',onReceiveMessage)
     },[stateKey,setState])
-    
+
   return [state,setState]
   }
 
