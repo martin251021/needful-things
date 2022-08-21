@@ -1,9 +1,11 @@
 import React, {useState, useEffect, useRef} from "react"
 
 export function useCrossTabState(stateKey,defaultValue){
+
     const [state,setState] = useState(defaultValue)
     const isNewSession = useRef(true)
-  useEffect(()=>{
+
+    useEffect(()=>{
       if(isNewSession.current){
         const currentState = localStorage.getItem(stateKey)
         if(currentState){
@@ -18,7 +20,8 @@ export function useCrossTabState(stateKey,defaultValue){
         localStorage.setItem(stateKey,JSON.stringify(state))
       }catch(error){}
     },[state,stateKey,defaultValue])
-  useEffect(()=>{
+
+    useEffect(()=>{
       const onReceiveMessage = (e) => {
        const {key,newValue} = e
       if(key===stateKey){
@@ -28,6 +31,7 @@ export function useCrossTabState(stateKey,defaultValue){
       window.addEventListener('storage',onReceiveMessage)
       return () => window.removeEventListener('storage',onReceiveMessage)
     },[stateKey,setState])
+    
   return [state,setState]
   }
 
