@@ -138,7 +138,7 @@ p {
   grid-row-gap: 1rem;
 }
 
-.navcategory-listitem:hover, .cart-item-img-title:hover {
+.navcategory-listitem:hover, .cart-item-img-title:hover, .order-recap-item-title:hover {
   text-decoration: underline;
 }
 
