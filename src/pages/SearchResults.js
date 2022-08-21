@@ -9,7 +9,7 @@ export default function SearchResults() {
     const appContext = useApp()
     const {searchQuery} = appContext
 
-    const [data, setData] = useState(null)
+    const [data, setData] = useState([])
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(false)
 
@@ -45,6 +45,7 @@ export default function SearchResults() {
             {loading ? <LoadingSpinner/> : 
             data.filter(e => searchHelper(e)).map((e,i) => <Product key={i} {...e} />) 
             }
+            {data.filter(e => searchHelper(e)).length === 0 && !loading && <h2>No results found.</h2>}
         </div>
     )
 }

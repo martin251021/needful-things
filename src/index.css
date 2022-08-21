@@ -106,6 +106,7 @@ p {
   grid-template-areas: "navbar cart-items cart-items cart-items";
   /* background: linear-gradient(84deg, #0000004d, #aca3a345); */
   background: linear-gradient(58deg, #18171770, #aca3a345, #3e3d3d61);
+  /* background: linear-gradient(74deg,#3e3d3d61 , #aca3a345, #e10707cf); */
   /* min-height: 80vh; */
 }
 
