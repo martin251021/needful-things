@@ -64,7 +64,7 @@ export default function SingleProduct() {
            setInputQty(1) 
         } 
         else {   
-            setInputQty(Number(e.target.value.replace(/\D/g, "")))
+            setInputQty(Number(e.target.value.replace(/\D/g, 1)))
         }
     }
 
