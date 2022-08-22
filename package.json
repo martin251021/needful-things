@@ -1,7 +1,7 @@
 {
   "name": "ecommerce",
   "version": "0.1.0",
-  "homepage": "https://martin251021.github.io/needful-things-build",
+  "homepage": "https://tubular-banoffee-ad1d11.netlify.app/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
