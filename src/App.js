@@ -1,6 +1,5 @@
 import './App.css';
 import React, {useEffect} from 'react';
-import axios from "axios";
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import Navbar from "./components/Navbar";
 import Header from "./components/Header";
@@ -29,7 +28,6 @@ function App() {
               <Navbar />
                 <Routes>
                   <Route index element={<Main />} />
-                  {/* <Route path="/categories/:category/:id" element={<SingleProduct />} /> */}
                   <Route path="/categories/:category" element={<Category />} />
                   <Route path="/cart" element={<CartPage />} />
                   <Route path="/cart/:id" element={<SingleProduct />} />

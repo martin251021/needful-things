@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useApp } from "../context/AppContext";
 import React, {useEffect} from "react";
 
-export default function CartItem({title, price, description, category, image, rating, id, counter, cartSelected}) {
+export default function CartItem({title, price, image, id, counter, cartSelected}) {
 
     const appContext = useApp()
     const {itemsInCart, setItemsInCart} = appContext

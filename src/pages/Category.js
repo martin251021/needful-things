@@ -2,7 +2,6 @@ import { useParams } from "react-router-dom";
 import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
 import Product from "../components/Product";
 import LoadingSpinner from "../components/LoadingSpinner";
 import { useApp } from "../context/AppContext";

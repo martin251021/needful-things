@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 
-export default function Product({title, price, description, category, image, rating, id}) {
+export default function Product({title, image, id}) {
 
     const styles = {
         textDecoration: "none",

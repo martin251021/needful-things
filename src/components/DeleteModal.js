@@ -3,7 +3,7 @@ import { useApp } from "../context/AppContext";
 export default function DeleteModal() {
 
     const appContext = useApp();
-    const {isDelModalActive, isOverlayActive, setDelModalActive, setOverlayActive, setItemsInCart} = appContext
+    const {isDelModalActive, setDelModalActive, setOverlayActive, setItemsInCart} = appContext
 
     const hideModal = () => {
         setDelModalActive(false)

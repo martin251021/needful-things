@@ -1,6 +1,6 @@
 import { useApp } from "../context/AppContext";
 import CartItem from "../components/CartItem";
-import React, {useEffect, useState} from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import trash from "../images/164909-photos-trash-png-free-photo_32x32.ico";
 import DeleteModal from "../components/DeleteModal";
@@ -14,10 +14,6 @@ export default function CartPage() {
     const {itemsInCart, isDelModalActive, setItemsInCart, setBuyModalActive, setOverlayActive, setDelModalActive} = appContext
 
     const total = itemsInCart.length > 0 ? itemsInCart.map(e => e.price * e.counter).reduce((a,e) => a + e).toFixed(2) : 0
-
-    // useEffect(() => {
-    //     localStorage.setItem("itemsInCart", JSON.stringify(itemsInCart))
-    // }, [itemsInCart])
 
     const handleBackButton = () => {
         navigate(-1)
@@ -36,7 +32,6 @@ export default function CartPage() {
     }
 
     const deleteSelected = () => {
-        // setItemsInCart(prevState => prevState.filter(e => e.cartSelected === false))
         setDelModalActive(true)
         setOverlayActive(true)
     }

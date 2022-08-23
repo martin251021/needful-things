@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function BuyModal() {
 
-    const {isBuyModalActive, isOverlayActive, setBuyModalActive, setOverlayActive} = useApp()
+    const {isBuyModalActive, setBuyModalActive, setOverlayActive} = useApp()
 
     const hideModal = () => {
         setBuyModalActive(false)

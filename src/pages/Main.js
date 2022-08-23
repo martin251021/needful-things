@@ -1,4 +1,3 @@
-import { useApp } from "../context/AppContext";
 import ImageSlider from "../components/ImageSlider";
 import React,{useEffect, useState} from "react";
 import axios from "axios";
