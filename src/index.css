@@ -14,19 +14,6 @@ code {
 }
 
 @font-face {
-  font-family: "Lobster-Regular";
-  src: local("Lobster-Regular"),
-   url("./fonts/Lobster-Regular/Lobster-Regular.ttf") format("truetype");
-  font-weight: bold;
-  }
-
-@font-face {
-  font-family: "Handlee-Regular";
-  src: local("Handlee-Regular"),
-    url("./fonts/Handlee/Handlee-Regular.ttf") format("truetype");
-}
-
-@font-face {
   font-family: "Raleway-VariableFont_wght";
   src:local("Raleway-VariableFont_wght"),
     url("./fonts/Raleway/Raleway-VariableFont_wght.ttf") format("truetype");
@@ -42,7 +29,6 @@ code {
 h1, h2, h3, h4 {
   font-family: "GreatVibes-Regular";
   font-weight: 600;
-  /* letter-spacing: 1px; */
 }
 
 h1 {
@@ -64,7 +50,6 @@ p {
   display:grid;
   align-items: center;
   grid-template-columns: 2fr 7fr;
-  /* justify-content: space-between; */
   grid-template-areas: "title search search cart";
 }
 
@@ -105,10 +90,6 @@ p {
   grid-template-rows: min-content;
   grid-template-columns: 1fr 5fr;
   grid-template-areas: "navbar cart-items cart-items cart-items";
-  /* background: linear-gradient(84deg, #0000004d, #aca3a345); */
-  /* background: linear-gradient(58deg, #18171770, #aca3a345, #3e3d3d61); */
-  /* background: linear-gradient(74deg,#3e3d3d61 , #aca3a345, #e10707cf); */
-  /* min-height: 80vh; */
 }
 
 
@@ -166,14 +147,12 @@ p {
 }
 
 .product:hover {
-  /* border:1px solid rgb(155, 152, 152); */
   box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
   text-decoration: underline;
 }
 
 .product-img {
   object-fit: cover;
-  /* width: 30%; */
   height: 10rem;;
 } 
 
