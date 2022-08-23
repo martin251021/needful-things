@@ -3,7 +3,7 @@
 This project was created as a simulation of ecommerce web app. Data displayed are fetched from several endpoints provided by [FakeProducts API](https://fakestoreapi.com/). Thanks to Web Storage API, all the data inputs from users are maintained across multiple open browser windows or after refreshing/restarting the app.
 
 ## Screenshot
-![alt text](https://pasteboard.co/93mlc3Cpbtwy.png)
+![alt text](https://gcdnb.pbrd.co/images/93mlc3Cpbtwy.png?o=1)
 
 ## Functionality
 
