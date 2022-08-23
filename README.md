@@ -1,6 +1,6 @@
 ## Introduction
 
-This project was created as a simulation of ecommerce web app. Data displayed are fetched from several endpoints provided by [Fake Store API](https://fakestoreapi.com/). Thanks to Web Storage API, all the data inputs from users are maintained across multiple open browser windows or after refreshing/restarting the app.
+This project was created as a simulation of ecommerce web app. Data displayed are fetched from several endpoints provided by [Fake Store API](https://fakestoreapi.com/). Thanks to Web Storage API, all the data inputs from users are maintained across multiple open browser windows or after refreshing/restarting the browser.
 
 ## Screenshot
 ![alt text](https://gcdnb.pbrd.co/images/93mlc3Cpbtwy.png?o=1)
