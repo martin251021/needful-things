@@ -31,7 +31,7 @@ export default function Header() {
             <div className="header-container">
                     <Link style={styles} to={"/"} >
                 <div className="header-title">
-                        <h1>Needful Things</h1>
+                        <h2>Needful Things</h2>
                 </div>
                     </Link>
                 <div className="header-search">

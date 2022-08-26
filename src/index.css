@@ -20,19 +20,25 @@ code {
 }
 
 @font-face {
-  font-family: "GreatVibes-Regular";
-  src: local("GreatVibes-Regular"),
-    url("./fonts/Great-Vibes/GreatVibes-Regular.ttf") format("truetype");
+  font-family: "Kanit-Light";
+  src: local("Kanit-Light"),
+    url("./fonts/Kanit/Kanit-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Kanit-Regular";
+  src: local("Kanit-Regular"),
+    url("./fonts/Kanit/Kanit-Regular.ttf") format("truetype");
 }
 
 
-h1, h2, h3, h4 {
-  font-family: "GreatVibes-Regular";
-  font-weight: 600;
+h1  {
+  font-family: "Kanit-Light";
+  font-size: 16;
 }
 
-h1 {
-  letter-spacing: 3px;
+h2, h3, h4 {
+  font-family: "Kanit-Light";
 }
 
 h2 {
@@ -41,7 +47,6 @@ h2 {
 
 p {
   font-family: "Raleway-VariableFont_wght";
-
 }
 
 .header-container {
@@ -55,10 +60,9 @@ p {
 
 .header-title {
   flex-basis: 16.2rem;
-  font-family: "GreatVibes-Regular";
-  font-size: 1.2rem;
-  letter-spacing: 2px;
-  grid-area: title
+  font-size: 1.4rem;
+  grid-area: title;
+  margin: 1rem 0 1rem 0;
 }
 
 .header-cart {
