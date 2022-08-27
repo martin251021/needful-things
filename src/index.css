@@ -582,3 +582,7 @@ input {
   padding:5px;
   margin-top: 3px;
 }
+
+.error > h2 {
+  margin-left: 1rem;
+}

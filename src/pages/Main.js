@@ -29,7 +29,7 @@ export default function Main() {
 
     return(
             <div className="main-page">
-                {loading? <LoadingSpinner /> :
+                {loading && !error ? <LoadingSpinner /> :
                 <div>
                     <ImageSlider data={data.filter(e => e.rating.rate > 4)}/>
                     <div className="main-best-container">

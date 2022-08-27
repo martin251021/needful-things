@@ -1,5 +1,5 @@
 import './App.css';
-import React, {useEffect} from 'react';
+import React from 'react';
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import Navbar from "./components/Navbar";
 import Header from "./components/Header";
@@ -12,6 +12,7 @@ import SearchResults from './pages/SearchResults';
 import { AppProvider } from "./context/AppContext";
 import OrderFinish from './pages/OrderFinish';
 import OrderSent from './pages/OrderSent';
+import Error from './pages/Error';
 
 export const AppContext = React.createContext()
 
@@ -36,6 +37,7 @@ function App() {
                   <Route path="/order" element={<OrderFinish />} />
                   <Route path="/order/:id" element={<SingleProduct />} />
                   <Route path="/ordered" element={<OrderSent />} />
+                  <Route path="/*" element={<Error />} />
                 </Routes>
           </div>
           <div className='footer'>

@@ -39,7 +39,7 @@ export default function Category() {
 
     return(
         <div className="category-items-container">
-            {loading ? <LoadingSpinner/> :          
+            {loading && !error ? <LoadingSpinner/> :          
             data.map((e,i) => <Product key={i} {...e} />)
             }
         </div>

@@ -42,7 +42,7 @@ export default function SearchResults() {
 
     return(
         <div className="category-items-container">
-            {loading ? <LoadingSpinner/> : 
+            {loading && !error ? <LoadingSpinner/> : 
             data.filter(e => searchHelper(e)).map((e,i) => <Product key={i} {...e} />) 
             }
             {data.filter(e => searchHelper(e)).length === 0 && !loading && <h2>No results found.</h2>}

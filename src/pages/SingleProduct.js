@@ -82,7 +82,7 @@ export default function SingleProduct() {
 
     return(
         <div >
-            {loading? <LoadingSpinner/>:
+            {loading && !error? <LoadingSpinner/>:
             <div className="singleproduct">
                 <img className="singleproduct-image" src={data.image} />
                 <div className="singleproduct-info">
