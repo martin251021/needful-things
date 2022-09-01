@@ -2,12 +2,17 @@ import React from "react"
 import {useEffect, useState} from "react";
 import axios from "axios";
 import NavCategory from "./NavCategory";
+import { useApp } from "../context/AppContext";
 
 export default function Navbar() {
 
     const [data, setData] = useState([])
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(false)
+
+    const appContext = useApp();
+
+    const {isMobile} = appContext
 
     useEffect(() => {
         const fetchData = async () => {
@@ -27,8 +32,8 @@ export default function Navbar() {
     }, [])
 
     return(
-        <div className="navbar-container">
-            <h2>Categories</h2>
+        <div className={isMobile?"navbar-container-mobile": "navbar-container"}>
+            {!isMobile && <h2>Categories</h2>}
             {loading ? <h2>Loading..</h2> : 
             <ul>
                 {data.map((e, i) => <NavCategory key={i} e={e}/>)}

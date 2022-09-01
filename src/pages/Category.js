@@ -9,10 +9,13 @@ import { useApp } from "../context/AppContext";
 export default function Category() {
 
     const {category} = useParams()
+    const appContext = useApp()
 
     const [data, setData] = useState([])
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(false)
+
+    const {isMobile} = appContext
 
     useEffect(() => {
         const fetchData = async() => {
@@ -31,7 +34,7 @@ export default function Category() {
     }, [category])
 
     return(
-        <div className="category-items-container">
+        <div className={isMobile? "category-items-container-mobile" : "category-items-container"}>
             {loading && !error ? <LoadingSpinner/> :          
             data.map((e,i) => <Product key={i} {...e} />)
             }

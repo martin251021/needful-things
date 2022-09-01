@@ -6,17 +6,24 @@ import youtube from "../images/youtube.png";
 import facebook from "../images/facebook.png";
 import instagram from "../images/instagram.png";
 import { useNavigate } from "react-router-dom";
+import { useApp } from "../context/AppContext";
 
 export default function Footer() {
 
     const navigate = useNavigate()
+    const appContext = useApp()
+    const {isMobile} = appContext
 
     const linkNav = () => {
         navigate("/")
     }
 
+    const styles = {
+        display: isMobile? "none" : "flex"
+    }
+
     return(
-        <div className="footer">
+        <div style={styles} className="footer">
             <h3 onClick={linkNav} className="footer-link">About us</h3>
             <h3 onClick={linkNav} className="footer-link">Contact</h3>
             <h3 onClick={linkNav} className="footer-link">Terms and Conditions</h3>

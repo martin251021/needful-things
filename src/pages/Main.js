@@ -16,8 +16,6 @@ export default function Main() {
 
     const {isMobile} = appContext
 
-    console.log(isMobile)
-
     useEffect(() => {
         const fetchData = async() => {
             setLoading(true)
@@ -45,7 +43,7 @@ export default function Main() {
                         return(
                             <div key={i}>
                                 <h2 className="main-best-title">Best of {e}</h2>
-                                <div className="main-best-items-container">
+                                <div className={isMobile? "main-best-items-container-mobile" : "main-best-items-container"}>
                                 {data.filter(el => el.rating.rate >3).filter(el => el.category === e).map((e,i) => <Product key={i} {...e}/>)}
                                 </div>
                             </div>

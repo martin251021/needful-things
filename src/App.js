@@ -13,10 +13,13 @@ import { AppProvider } from "./context/AppContext";
 import OrderFinish from './pages/OrderFinish';
 import OrderSent from './pages/OrderSent';
 import Error from './pages/Error';
+import { useMediaQuery } from 'react-responsive';
 
 export const AppContext = React.createContext()
 
 function App() {
+
+  const isMobile = useMediaQuery({ query: "(max-width: 900px)"})
 
   return (
     <AppProvider>
@@ -25,7 +28,7 @@ function App() {
           <div className='header'>
             <Header />
           </div>
-          <div className='main-container'>
+          <div className={isMobile? "main-container-mobile":"main-container"}>
               <Navbar />
                 <Routes>
                   <Route index element={<Main />} />
