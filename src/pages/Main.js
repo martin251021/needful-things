@@ -3,12 +3,20 @@ import React,{useEffect, useState} from "react";
 import axios from "axios";
 import LoadingSpinner from "../components/LoadingSpinner";
 import Product from "../components/Product";
+import { useApp } from "../context/AppContext";
+
 
 export default function Main() {
 
     const[data, setData] = useState();
     const[loading, setLoading] = useState(true);
     const[error, setError] = useState(false);
+
+    const appContext = useApp()
+
+    const {isMobile} = appContext
+
+    console.log(isMobile)
 
     useEffect(() => {
         const fetchData = async() => {

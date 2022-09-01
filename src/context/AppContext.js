@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import { useCrossState } from "../hooks/useCrossState";
+import { useMediaQuery } from 'react-responsive'
 
 const AppContext = React.createContext()
 export function useApp() {
@@ -13,6 +14,7 @@ export function AppProvider({children}) {
     const [isBuyModalActive, setBuyModalActive] = useState(false)
     const [isOverlayActive, setOverlayActive] = useState(false)
     const [isDelModalActive, setDelModalActive] = useState(false)
+    const isMobile = useMediaQuery({ query: "(max-width: 900px)"})
 
     const useEscape = function(onEscape) {
         React.useEffect(() => {
@@ -41,6 +43,7 @@ export function AppProvider({children}) {
             isOverlayActive: isOverlayActive,
             isDelModalActive: isDelModalActive,
             setItemsInCart,
+            isMobile: isMobile,
             setSearchQuery,
             setBuyModalActive,
             setOverlayActive,

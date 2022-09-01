@@ -4,11 +4,19 @@ import { useApp } from "../context/AppContext";
 
 export default function Header() {
     const appContext = useApp()
-    const {searchQuery, setSearchQuery} = appContext
+    const {searchQuery, setSearchQuery, isMobile} = appContext
     const inputEl = document.querySelector(".search-bar")
 
     const styles = {
         textDecoration: "none"
+    }
+
+    const titleStyles = {
+        fontSize: isMobile ? "0.8rem" : "1.4rem"
+    }
+
+    const searchBarStyles = {
+        width: isMobile ? "68%" : "40%",
     }
 
     const navigate = useNavigate()
@@ -28,14 +36,15 @@ export default function Header() {
     }
 
     return( 
-            <div className="header-container">
-                    <Link style={styles} to={"/"} >
-                <div className="header-title">
-                        <h2>Needful Things</h2>
-                </div>
-                    </Link>
+            <div className={isMobile ? "header-container-mobile" : "header-container"}>
+                <Link style={styles} to={"/"} >
+                    <div style={titleStyles} className="header-title">
+                             <h2>Needful Things</h2>
+                    </div>
+                </Link>
                 <div className="header-search">
-                    <input 
+                    <input
+                        style={searchBarStyles} 
                         className="search-bar" 
                         placeholder="Search for a product"
                         onChange={searchQueryHandler}

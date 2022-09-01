@@ -9,13 +9,10 @@ import { useApp } from "../context/AppContext";
 export default function Category() {
 
     const {category} = useParams()
-    const appContext = useApp()
 
     const [data, setData] = useState([])
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(false)
-
-    const {itemsInCart} = appContext
 
     useEffect(() => {
         const fetchData = async() => {
@@ -32,10 +29,6 @@ export default function Category() {
         }
         fetchData()
     }, [category])
-
-    useEffect(() => {
-        console.log(itemsInCart)
-    },[itemsInCart])
 
     return(
         <div className="category-items-container">

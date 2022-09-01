@@ -5,13 +5,13 @@ import { useApp } from "../context/AppContext";
 export default function Cart() {
 
     const appContext = useApp();
-    const {itemsInCart} = appContext;
+    const {itemsInCart, isMobile} = appContext;
 
     return(
         <div className="cart-icon-container">
             <Link to={"/cart"}>
-                <span className="cart-counter">{itemsInCart.length}</span>
-                <img className="cart-icon" src={cart} /> 
+                <span className={isMobile ? "cart-counter-mobile" : "cart-counter"}>{itemsInCart.length}</span>
+                <img className={isMobile? "cart-icon-mobile" : "cart-icon"} src={cart} /> 
             </Link> 
             </div>
 

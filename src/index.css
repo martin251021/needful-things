@@ -58,6 +58,13 @@ p {
   grid-template-areas: "title search search cart";
 }
 
+.header-container-mobile {
+  background-color: white;
+  padding: 0 1rem 0 1rem;
+  align-items: center;
+  margin-bottom: 0.8rem;
+}
+
 .header-title {
   flex-basis: 16.2rem;
   font-size: 1.4rem;
@@ -74,10 +81,6 @@ p {
 
 .header-title > h2{
   margin: 1rem 0 1rem 0;
-}
-
-.search-bar {
-  width: 40%;
 }
 
 .search-button {
@@ -234,15 +237,31 @@ p {
   margin-left: auto;
 }
 
-.cart-counter {
-  position: absolute;
-  right: 71px;
+.cart-icon-mobile {
+  position:absolute;
+  right: 29px;
   top: 20px;
+  z-index: 0;
+}
+
+.cart-counter, .cart-counter-mobile {
+  position: absolute;
   background-color: orange;
   height: 22px;
   width: 22px;
   text-align: center;
   border-radius: 10px;
+  z-index: 1;
+}
+
+.cart-counter {
+  right: 71px;
+  top: 20px;
+}
+
+.cart-counter-mobile {
+  right: 21px;
+  top: 11px;
 }
 
 .cart-item-container {
