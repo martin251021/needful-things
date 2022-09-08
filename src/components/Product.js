@@ -1,6 +1,10 @@
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
+import { useApp } from "../context/AppContext";
 
 export default function Product({title, image, id}) {
+
+    const appContext = useApp()
+    const {isMobile} = appContext
 
     const styles = {
         textDecoration: "none",
@@ -9,9 +13,9 @@ export default function Product({title, image, id}) {
 
     return(
         <Link style={styles} to={`/search/${id}`} target="_blank">
-        <div className="product">
-            <p>{title}</p>
-            <img className="product-img" src={image}/>
+        <div className={isMobile? "product-mobile" : "product"}>
+            <p className={isMobile? "product-title-mobile" : "product-title"}>{title}</p>
+            <img className={isMobile? "product-img-mobile" : "product-img"} src={image}/>
         </div>
         </Link>
 

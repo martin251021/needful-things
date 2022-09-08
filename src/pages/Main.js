@@ -42,7 +42,7 @@ export default function Main() {
                     {Array.from(new Set(data.map(e => e.category))).map((e,i) => {
                         return(
                             <div key={i}>
-                                <h2 className="main-best-title">Best of {e}</h2>
+                                <h2 className={isMobile? "main-best-title-mobile" : "main-best-title"}>Best of {e}</h2>
                                 <div className={isMobile? "main-best-items-container-mobile" : "main-best-items-container"}>
                                 {data.filter(el => el.rating.rate >3).filter(el => el.category === e).map((e,i) => <Product key={i} {...e}/>)}
                                 </div>
