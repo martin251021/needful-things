@@ -27,7 +27,8 @@ export default function ImageSlider({data}) {
       }
 
       const sliderStyles = {
-        marginLeft: isMobile? "-2rem" : ""
+        marginLeft: isMobile? "-2rem" : "",
+        marginBottom: isMobile? "1.8rem" : "2rem"
       }
       
     return(
