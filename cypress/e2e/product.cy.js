@@ -31,5 +31,16 @@ describe("product page test", () => {
     cy.get(".modal").should("be.visible")
   })
 
+  it("modal should disappear after clicking back button", () => {
+    cy.contains("Add to cart").click()
+    cy.get(".modal-back").click()
+    cy.get(".hidden").should("exist")
+  })
+
+  it("should redirect to cart page after clicking continue to cart", () => {
+    cy.contains("Add to cart").click()
+    cy.get(".modal-continue").click()
+    cy.url().should("eq", "http://localhost:3000/cart")
+  })
 
 })
