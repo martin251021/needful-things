@@ -63,4 +63,9 @@ describe("cart page tests", () => {
     //     cy.get(".modal-continue").click()
     // })
 
+    it("should check, whether continue button navigates user to order details", () => {
+        cy.get(".continue-btn").click()
+        cy.url().should("eq", "http://localhost:3000/order")
+    })
+
 })
