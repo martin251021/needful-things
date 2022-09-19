@@ -68,4 +68,9 @@ describe("cart page tests", () => {
         cy.url().should("eq", "http://localhost:3000/order")
     })
 
+    it("should check if the cart content persists after refreshing the page", () => {
+        cy.reload()
+        cy.contains("Total").should("be.visible")
+    })
+
 })
