@@ -68,4 +68,17 @@ describe("order page tests", () => {
         cy.get(".cart-page-del").should("be.visible")
     })
 
+    it("should check if the finish order button redirects user to final success page", () => {
+        cy.get("#UPS").click()
+        cy.get("#Paypal").click()
+        cy.get("input[placeholder='Full name']").type("Happy Customer")
+        cy.get("input[placeholder='Address']").type("Main Street")
+        cy.get("input[placeholder='City']").type("Anytown, USA")
+        cy.get("input[placeholder='Post code']").type("99999")
+        cy.get("input[placeholder='Telephone number']").type("123456879")
+        cy.get("input[placeholder='E-mail']").type("happycamper@gmail.com")
+        cy.contains("Finish order").click()
+        cy.url().should("eq", "http://localhost:3000/ordered")
+    })
+
 })
